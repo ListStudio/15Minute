@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каналы - 15 Минут</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/Logotype.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <img src="assets/Logotype.png" alt="15 Минут" class="logo">
+                <h1>15 Минут</h1>
+            </div>
+            <div class="user-menu">
+                <span id="userName">Загрузка...</span>
+                <button id="logoutBtn" class="btn-logout">Выход</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <div class="nav-items">
+                <a href="index.html" class="nav-item" data-page="home">
+                    <span class="icon">💬</span>
+                    <span>Чаты</span>
+                </a>
+                <a href="event.html" class="nav-item" data-page="event">
+                    <span class="icon">📅</span>
+                    <span>Ивенты</span>
+                </a>
+                <a href="channels.html" class="nav-item active" data-page="channels">
+                    <span class="icon">📢</span>
+                    <span>Каналы</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="channels-section">
+                <!-- Channels List -->
+                <div class="channels-list">
+                    <div class="section-header">
+                        <h2>Каналы</h2>
+                        <button id="newChannelBtn" class="btn-new">+ Новый канал</button>
+                    </div>
+                    <div id="channelsList" class="channels-container">
+                        <p class="empty-state">Загрузка каналов...</p>
+                    </div>
+                </div>
+
+                <!-- Channel Content -->
+                <div class="channel-window">
+                    <div id="channelHeader" class="channel-header">
+                        <h2>Выберите канал</h2>
+                    </div>
+                    <div id="channelMessages" class="messages-container">
+                        <p class="empty-state">Выберите канал для просмотра сообщений</p>
+                    </div>
+                    <div id="channelInput" class="chat-input hidden">
+                        <input type="text" id="channelMessageInput" placeholder="Напишите в канал...">
+                        <button id="channelSendBtn" class="btn-send">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Channel Modal -->
+    <div id="newChannelModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Новый канал</h3>
+            <input type="text" id="newChannelName" placeholder="Название канала">
+            <textarea id="newChannelDescription" placeholder="Описание канала" rows="3"></textarea>
+            <div class="modal-buttons">
+                <button id="createChannelBtn" class="btn-primary">Создать</button>
+                <button id="closeChannelModal" class="btn-secondary">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4/dist/module/index.js" type="module"></script>
+    <script src="js/config.js"></script>
+    <script src="js/channels.js" type="module"></script>
+</body>
+</html>
