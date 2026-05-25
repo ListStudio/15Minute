@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ивенты - 15 Минут</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/Logotype.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>15 Минут - Ивенты</h1>
+            </div>
+            <div class="user-menu">
+                <span id="userName">Загрузка...</span>
+                <button id="logoutBtn" class="btn-logout">Выход</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <div class="nav-items">
+                <a href="index.html" class="nav-item" data-page="home">
+                    <span class="icon">💬</span>
+                    <span>Чаты</span>
+                </a>
+                <a href="event.html" class="nav-item active" data-page="event">
+                    <span class="icon">📅</span>
+                    <span>Ивенты</span>
+                </a>
+                <a href="channels.html" class="nav-item" data-page="channels">
+                    <span class="icon">📢</span>
+                    <span>Каналы</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="events-section">
+                <div class="section-header">
+                    <h2>Ивенты</h2>
+                    <button id="newEventBtn" class="btn-new">+ Создать ивент</button>
+                </div>
+                
+                <div id="eventsList" class="events-container">
+                    <p class="empty-state">Ивенты появятся здесь</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Создать ивент</h3>
+            <input type="text" id="eventTitle" placeholder="Название ивента">
+            <textarea id="eventDescription" placeholder="Описание ивента" rows="4"></textarea>
+            <input type="datetime-local" id="eventDateTime">
+            <div class="modal-buttons">
+                <button id="createEventBtn" class="btn-primary">Создать</button>
+                <button id="closeEventModal" class="btn-secondary">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4/dist/module/index.js" type="module"></script>
+    <script src="js/config.js"></script>
+    <script src="js/events.js" type="module"></script>
+</body>
+</html>
