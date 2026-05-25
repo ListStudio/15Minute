@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Минут - Мессенджер</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/Logotype.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <img src="assets/Logotype.png" alt="15 Минут" class="logo">
+                <h1>15 Минут</h1>
+            </div>
+            <div class="user-menu">
+                <span id="userName">Загрузка...</span>
+                <button id="logoutBtn" class="btn-logout">Выход</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <div class="nav-items">
+                <a href="index.html" class="nav-item active" data-page="home">
+                    <span class="icon">💬</span>
+                    <span>Чаты</span>
+                </a>
+                <a href="event.html" class="nav-item" data-page="event">
+                    <span class="icon">📅</span>
+                    <span>Ивенты</span>
+                </a>
+                <a href="channels.html" class="nav-item" data-page="channels">
+                    <span class="icon">📢</span>
+                    <span>Каналы</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="chats-section">
+                <!-- Chats List -->
+                <div class="chats-list">
+                    <div class="section-header">
+                        <h2>Чаты</h2>
+                        <button id="newChatBtn" class="btn-new">+ Новый чат</button>
+                    </div>
+                    <div id="chatsList" class="chats-container">
+                        <p class="empty-state">Загрузка чатов...</p>
+                    </div>
+                </div>
+
+                <!-- Chat Window -->
+                <div class="chat-window">
+                    <div id="chatHeader" class="chat-header">
+                        <h2>Выберите чат</h2>
+                    </div>
+                    <div id="messagesContainer" class="messages-container">
+                        <p class="empty-state">Выберите чат для начала общения</p>
+                    </div>
+                    <div id="chatInput" class="chat-input hidden">
+                        <input type="text" id="messageInput" placeholder="Введите сообщение...">
+                        <button id="sendBtn" class="btn-send">Отправить</button>
+                    </div>
+                </div>
+
+                <!-- General Chat -->
+                <div class="general-chat">
+                    <div class="general-header">
+                        <h3>Общий чат</h3>
+                        <img src="assets/Logotype.png" alt="Logo" class="general-logo">
+                    </div>
+                    <div id="generalMessages" class="messages-container">
+                        <p class="empty-state">Загрузка сообщений...</p>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="generalMessageInput" placeholder="Напишите в общий чат...">
+                        <button id="generalSendBtn" class="btn-send">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="newChatModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Новый чат</h3>
+            <input type="text" id="newChatName" placeholder="Название чата">
+            <div class="modal-buttons">
+                <button id="createChatBtn" class="btn-primary">Создать</button>
+                <button id="closeChatModal" class="btn-secondary">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4/dist/module/index.js" type="module"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
