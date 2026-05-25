@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - 15 Минут</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/Logotype.png">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+            <img src="assets/Logotype.png" alt="15 Минут" class="auth-logo">
+            <h1>15 Минут</h1>
+            <p class="auth-subtitle">Мессенджер для общения</p>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form">
+                <h2>Вход</h2>
+                <input type="email" id="loginEmail" placeholder="Электронная почта" required>
+                <input type="password" id="loginPassword" placeholder="Пароль" required>
+                <button id="loginBtn" class="btn-auth">Войти</button>
+                <p class="auth-toggle">
+                    Нет аккаунта? 
+                    <button id="toRegisterBtn" type="button" class="link-btn">Зарегистрироваться</button>
+                </p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" class="auth-form hidden">
+                <h2>Регистрация</h2>
+                <input type="text" id="registerName" placeholder="Ваше имя" required>
+                <input type="email" id="registerEmail" placeholder="Электронная почта" required>
+                <input type="password" id="registerPassword" placeholder="Пароль" required>
+                <input type="password" id="registerPassword2" placeholder="Повторите пароль" required>
+                <button id="registerBtn" class="btn-auth">Зарегистрироваться</button>
+                <p class="auth-toggle">
+                    Уже есть аккаунт? 
+                    <button id="toLoginBtn" type="button" class="link-btn">Войти</button>
+                </p>
+            </div>
+
+            <div id="authError" class="error-message hidden"></div>
+            <div id="authSuccess" class="success-message hidden"></div>
+        </div>
+
+        <!-- Background decoration -->
+        <div class="auth-decoration">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.4/dist/module/index.js" type="module"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js" type="module"></script>
+</body>
+</html>
